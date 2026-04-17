@@ -56,8 +56,7 @@ GROQ_API_KEY=your_groq_api_key_here
 
 ```bash
 # Part 1 — Fetch articles from PubMed and save to data/output.json
-> 💡 **Note:** `data/output.json` is already provided in the repo. You can skip Part 1 if you want to use the existing dataset
-python src/pipeline.py
+python src/pipeline.py   # Note: data/output.json` is already provided in the repo. You can skip Part 1 if you want to use the existing dataset
 
 # Part 2 — Run all three retrieval methods and compare results
 python src/retrieval_bm25.py
