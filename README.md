@@ -254,10 +254,10 @@ With more time I would add a lightweight query translation step specifically for
 
 **1. Try alternative cloud GPU providers immediately (same day)**
 
-- **RunPod** — Spot A100 80GB instances are usually available even when specific providers are out. A single A100 80GB fits a 70B model in 4-bit quantization (GGUF/AWQ). Cost: ~$1.5–2/hr.
+- **RunPod** — Spot A100 80GB instances are usually available even when specific providers are out. A single A100 80GB fits a 70B model in 4-bit quantization (GGUF/AWQ). 
 - **Vast.ai** — More options, cheaper spot market, slightly less reliable. Good for non-critical benchmarks.
 - **Lambda Labs** — Often has H100 SXM availability. More expensive but stable.
-- **Together AI / Fireworks AI** — If I only need inference (not fine-tuning), their APIs serve 70B models (Llama-3.1-70B, Mixtral 8x22B) with no GPU setup needed. Fast to start, pay-per-token.
+- **Together AI / Fireworks AI** — If I only need inference (not fine-tuning), their APIs serve 70B models with no GPU setup needed. Fast to start, pay-per-token.
 
 **2. Use quantization to fit on smaller GPUs if needed**
 
@@ -267,12 +267,6 @@ A 70B model in 4-bit GGUF runs on 2× A40 (48GB each) or 1× A100 80GB. I would 
 
 Rather than a full benchmark suite, I would run a focused medical QA evaluation: 50–100 questions from a public dataset (MedQA, PubMedQA), automated scoring (exact match + LLM-as-judge), and compare the 70B model against the baseline we already use. Total GPU time: 2–4 hours.
 
-**4. Document decisions async for the manager**
-
-Drop a Slack message summarising: provider chosen, cost estimate, benchmark scope, expected completion time. Manager can review async without blocking progress.
-
-**Trade-offs:** Using Together AI / Fireworks is fastest to start and requires zero GPU management, but gives no control over serving configuration (quantization, batch size, sampling). A self-hosted RunPod instance gives full control and is better for a rigorous benchmark, at the cost of 30–60 minutes of setup time.
-
 ---
 
 ## AI Usage
@@ -280,5 +274,3 @@ Drop a Slack message summarising: provider chosen, cost estimate, benchmark scop
 Claude (Anthropic) was used to assist with:
 - Structuring the `rag_generation.py` module and Groq API integration patterns
 - Drafting this README
-
-All core logic (BM25 setup, RRF formula implementation, E5 encoding, PubMed XML parsing) was written and understood independently. AI-generated code was reviewed and adapted before use.
