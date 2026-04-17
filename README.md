@@ -226,7 +226,7 @@ A result was judged relevant if its title and abstract directly addressed the qu
 | Iron supplementation anemia pregnancy | 0.80 | 0.80 | 0.80 |
 | Çölyak hastalığı tanı kriterleri | 0.0 | 0.60 | 0.20 |
 | Community acquired pneumonia antibiotics | 0.60 | 0.60 | 0.60 |
-| **Average P@5** | **0.44** | **0.64** | **3.6/5** |
+| **Average P@5** | **0.44** | **0.64** | **0.56** |
 
 ### Observations
 
@@ -278,7 +278,7 @@ Drop a Slack message summarising: provider chosen, cost estimate, benchmark scop
 ## AI Usage
 
 Claude (Anthropic) was used to assist with:
-- Structuring the `rag_generation.py` module and Gemini/Groq API integration patterns
+- Structuring the `rag_generation.py` module and Groq API integration patterns
 - Drafting this README
 
 All core logic (BM25 setup, RRF formula implementation, E5 encoding, PubMed XML parsing) was written and understood independently. AI-generated code was reviewed and adapted before use.
