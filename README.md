@@ -190,13 +190,13 @@ The RRF formula is:
 RRF_score(doc) = Σ  1 / (k + rank_i)
 ```
 
-`k` is a smoothing constant that controls how much the top ranks dominate over lower ranks.
+In our Reciprocal Rank Fusion implementation, the smoothing constant $k$ plays a vital role in balancing the influence of different retrieval methods. To observe its impact, we tested five different $k$ values ($1, 10, 60, 200, 1000$) on our first query.
 
 - **k = 0**: `score = 1/rank`. Rank 1 gets infinite weight (division by zero in the limit), rank 2 gets 0.5. Top positions dominate completely.
 - **k = 60** (default): Rank 1 → 1/61 ≈ 0.0164, Rank 10 → 1/70 ≈ 0.0143. Differences are meaningful but not extreme. Documents that rank moderately well in both methods can outrank a document that ranks #1 in only one.
 - **k = 1000**: Rank 1 → 1/1001, Rank 10 → 1/1010. Scores converge to ~0.001 for all documents. Rank differences become nearly meaningless — fusion degenerates to a near-uniform vote.
 
-In practice, k=60 was chosen in the original Cormack et al. paper empirically and remains the standard default because it provides enough smoothing to reward consistently-ranked documents without completely flattening rank differences.
+As observed in the data, as $k$ increases, the absolute RRF scores decrease significantly because the denominator $(k + rank)$ grows larger. Our experiment confirms that $k=60$ is the "sweet spot": it provides enough smoothing to favor documents that appear in the top results of both BM25 and Semantic search, without flattening the rank importance to the point of irrelevance.
 
 ### Why use rank position instead of raw scores?
 
@@ -231,8 +231,6 @@ A result was judged relevant if its title and abstract directly addressed the qu
 ### Observations
 
 **Semantic (E5) performs best overall (avg P@5: 0.64)**, followed by Hybrid RRF (0.56), and then BM25 (0.44). While Semantic (E5) showed the highest scores in this specific test, I chose to implement the Hybrid Search model for the final RAG system. This decision ensures a more robust retrieval by simultaneously leveraging exact keyword matching (BM25) and deep semantic understanding (E5), providing a safety net against potential semantic hallucinations in specialized medical terminology.
-
-**Why not nDCG?** nDCG requires graded relevance scores (0/1/2), which would need a domain expert to assign. For a 5-query demo with a 41-article corpus, binary P@5 with manual judgement is both tractable and honest about what was measured.
 
 ---
 
