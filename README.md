@@ -27,8 +27,8 @@ A retrieval-augmented generation system that fetches medical literature from Pub
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/your-username/medical_rag_system.git
-cd medical_rag_system
+git clone https://github.com/Volkansari3/medical-rag-system.git
+cd medical-rag-system
 
 # 2. Create and activate virtual environment
 python -m venv venv
