@@ -1,0 +1,52 @@
+══════════════════════════════════════════════════════════════════════
+QUERY: What is the clinical significance of the neutrophil/albumin ratio (NAR) in T2DM risk?
+══════════════════════════════════════════════════════════════════════
+
+📄 RETRIEVED ARTICLES:
+──────────────────────────────────────────────────────────────────────
+[1] PMID 41454671 (rrf_score: 0.032787)
+    Neutrophil/albumin ratio positively associates with type 2 diabetes mellitus risk in ...
+[2] PMID 41810829 (rrf_score: 0.031754)
+    Associations between patient risk factors, disease severity, and inflammatory markers...
+[3] PMID 41944044 (rrf_score: 0.029851)
+    Plasma proteomic signatures linking preserved ratio impaired spirometry to cardiometa...
+[4] PMID 41782401 (rrf_score: 0.016129)
+    Immune-related enteropathy....
+[5] PMID 41934309 (rrf_score: 0.015873)
+    Collaborative management model combined with inhaled corticosteroids in CPAP treatmen...
+
+🤖 GENERATED ANSWER (Groq LLaMA3):
+──────────────────────────────────────────────────────────────────────
+The neutrophil/albumin ratio (NAR) is positively associated with type 2 diabetes
+mellitus (T2DM) risk in women with prior gestational diabetes mellitus (GDM),
+particularly in those with a body mass index (BMI) of 25 kg/m (PMID: 41454671).
+This association suggests that NAR may influence T2DM risk through the
+modulation of red cell distribution width (RDW) and high-density lipoprotein
+cholesterol (HDL-C).
+
+══════════════════════════════════════════════════════════════════════
+QUERY: Diyabet yönetiminde hasta aktivasyonunun (patient activation) rolü nedir?
+══════════════════════════════════════════════════════════════════════
+
+📄 RETRIEVED ARTICLES:
+──────────────────────────────────────────────────────────────────────
+[1] PMID 41848224 (rrf_score: 0.031545)
+    Breaking the cycle: patient activation role in improving diabetes self-care adherence...
+[2] PMID 41914737 (rrf_score: 0.031514)
+    N6-methyladenosine modification of NEU1 mediated by METTL3 exacerbates angiotensin II...
+[3] PMID 41817101 (rrf_score: 0.030835)
+    Understanding barriers and facilitators of adherence to lifestyle changes in prediabe...
+[4] PMID 41944044 (rrf_score: 0.02967)
+    Plasma proteomic signatures linking preserved ratio impaired spirometry to cardiometa...
+[5] PMID 41520281 (rrf_score: 0.016393)
+    Comparative insights into the gut-heart axis: cross-species and cross-population pers...
+
+🤖 GENERATED ANSWER (Groq LLaMA3):
+──────────────────────────────────────────────────────────────────────
+Hasta aktivasyonu, diyabet yönetiminde önemli bir faktördür. Hasta aktivasyonu,
+hastaların kendi sağlık durumlarını yönetmelerine ve diyabet self-careine
+katılımlarını artırmaya yardımcı olur (PMID: 41848224). Bu, diyabet distressini
+azaltmaya ve uzun vadeli sağlık için proaktif katılımı teşvik etmeye yardımcı
+olur.
+
+✅ Done.
